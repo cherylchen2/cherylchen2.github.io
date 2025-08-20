@@ -1,0 +1,45 @@
+<div class="front-page-bg">
+  <div class="text">
+    I am 
+    <om-typewriter
+      [words]="words"
+      [disableLoop]="true"
+      [deleteDelay]="3000"
+    ></om-typewriter>
+  </div>
+  <div class="image">
+    <img src="/assets/images/work-bg-update-sky.jpg" ngx-parallax />
+    <img
+      src="/assets/images/work-bg-update-window.png"
+      ngx-parallax
+      [speed]="50"
+    />
+    <img
+      src="/assets/images/work-bg-update-clouds-shadow.png"
+      ngx-parallax
+      [speed]="20"
+      style="top: 9vh; height: 200%"
+    />
+    <img
+      src="/assets/images/work-bg-update-clouds.png"
+      ngx-parallax
+      [speed]="60"
+    />
+    <img
+      src="/assets/images/work-bg-update.gif"
+      ngx-parallax
+      [speed]="-20"
+      style="z-index: 2"
+    />
+    <img
+      src="/assets/images/work-bg-update-clouds-bottom.png"
+      ngx-parallax
+      [speed]="-70"
+      style="z-index: 2; top: 0; height: 200%"
+    />
+  </div>
+  <div class="about-me">
+    <app-about-me></app-about-me>
+  </div>
+</div>
+

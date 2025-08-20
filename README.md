@@ -1,2 +1,2 @@
 # cherylchen2.github.io
-My persona; website
+Start with `ng serve`

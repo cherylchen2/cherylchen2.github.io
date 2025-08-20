@@ -1,0 +1,43 @@
+.about-me-container {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    min-height: 100vh;
+
+    .content {
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        font-weight: bolder;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .about-me-image {
+        position: relative;
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .deco-image {
+            width: 15%;
+            position: absolute;
+        }
+    }
+}
