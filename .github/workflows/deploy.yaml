@@ -3,14 +3,27 @@ on:
     branches:
       - "main"
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-angular-to-github-pages@v1.0.0
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to gh pages
+        run: |
+          npx angular-cli-ghpages --dir=dist/cherylchen
+        env:
+          CI: true
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
