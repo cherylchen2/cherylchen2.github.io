@@ -26,6 +26,8 @@ jobs:
 
       - name: Deploy to gh pages
         run: |
+          git config --global user.email ${{ env.EMAIL }}
+          git config --global user.name ${{ env.USERNAME }}
           npx angular-cli-ghpages --dir=dist/cherylchen --no-silent
         env:
           CI: true
