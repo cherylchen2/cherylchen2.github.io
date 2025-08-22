@@ -1,8 +1,12 @@
 .about-me-container {
     padding: 20px;
     font-family: 'Courier New', Courier, monospace;
-    display: block;
+    display: flex;
     min-height: 100vh;
+
+    background-color: #c3e6e2;
+    flex-direction: column;
+    align-items: flex-start;
 
     .content {
         @media (min-width: 768px) {

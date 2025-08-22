@@ -13,7 +13,7 @@ import { AboutMeComponent } from '../about-me/about-me.component';
   standalone: true
 })
 export class HomeComponent implements OnInit {
-  words: string[] = [' a developer', ' a creator', ' a thinker', ' Cheryl.'];
+  words: string[] = [' a creator.', ' an explorer.', ' a developer.', ' Cheryl.'];
 
   constructor() {}
 
