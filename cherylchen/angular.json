@@ -103,7 +103,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/cherylchen2.github.io/"
+          }
         }
       }
     }
