@@ -21,8 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Build project
+        run: npm run build
+
       - name: Deploy to gh pages
-        run: ng deploy
+        run: npm run deploy
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
