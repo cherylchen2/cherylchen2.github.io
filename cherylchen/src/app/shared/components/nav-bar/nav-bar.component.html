@@ -1,0 +1,10 @@
+<div class="nav-bar-container">
+    <div class="nav-item-container" *ngFor="let item of navItems">
+        <p-button
+            class="nav-item"
+            [routerLink]="item.link"
+            [class.active]="activeItem === item.label"
+            [label]="item.label"
+        ></p-button>
+    </div>
+</div>

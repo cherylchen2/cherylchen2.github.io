@@ -1,0 +1,5 @@
+<div class="projects-container">
+    <app-detailed-about-me *ngIf="activeItem == 'About Me'" class="about-me"></app-detailed-about-me>
+    <app-projects *ngIf="activeItem == 'Projects'" class="projects"></app-projects>
+    <app-nav-bar class="nav-bar" [navItems]="navItems" [activeItem]="activeItem"></app-nav-bar>
+</div>
