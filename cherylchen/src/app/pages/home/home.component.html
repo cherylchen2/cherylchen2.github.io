@@ -1,10 +1,11 @@
-<div class="front-page-bg">
+<div class="front-page-bg" (scroll)="onScroll($event)">
+  <app-scroll-down-hint [scrollPercentageThreshold]="50"></app-scroll-down-hint>
   <div class="text">
     I am 
     <om-typewriter
       [words]="words"
       [disableLoop]="true"
-      [deleteDelay]="3000"
+      [deleteDelay]="800"
     ></om-typewriter>
   </div>
   <div class="image">

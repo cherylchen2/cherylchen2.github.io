@@ -4,9 +4,12 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 
+import { ScrollDownHintComponent } from '../../shared/components/scroll-down-hint/scroll-down-hint.component';
+
 @Component({
   selector: 'app-detailed-about-me',
-  imports: [AccordionModule, ButtonModule, RouterModule],
+  imports: [AccordionModule, ButtonModule, RouterModule, ScrollDownHintComponent],
+  providers: [ScrollDownHintComponent],
   standalone: true,
   templateUrl: './detailed-about-me.component.html',
   styleUrl: './detailed-about-me.component.scss'
@@ -27,6 +30,8 @@ export class DetailedAboutMeComponent {
   screenWidth: number = window.innerWidth;
   defaultAccordionIndex: string = this.screenWidth > 768 ? '0' : '-1';
 
+  constructor(private scrollHint: ScrollDownHintComponent) {}
+
   ngAfterViewInit(): void {
     if(typeof window != 'undefined') {
       this.screenWidth = window.innerWidth;
@@ -42,17 +47,6 @@ export class DetailedAboutMeComponent {
   }
 
   onScroll(event: any): void {
-    const scrollTop = event.target.scrollTop;
-    const scrollHeight = event.target.scrollHeight - event.target.clientHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-
-    const hintElement = document.querySelector('.scroll-down-hint') as HTMLElement;
-    if (hintElement) {
-      if (scrollPercentage > 90) {
-        hintElement.style.opacity = '0';
-      } else {
-        hintElement.style.opacity = '1';
-      }
-    }
+    this.scrollHint.onScroll(event);
   }
 }

@@ -18,7 +18,6 @@ export class HubComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    console.log(this.router.url);
     if (this.router.url === '/about-me') {
       this.activeItem = 'About Me';
     } else {

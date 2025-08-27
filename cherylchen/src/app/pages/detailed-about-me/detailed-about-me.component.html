@@ -1,13 +1,13 @@
 <section class="detailed-about-me-container" dir="ltr" (scrollsnapchange)="onScroll($event)" (scroll)="onScroll($event)">
 
-    <div class="scroll-down-hint">
-        More
-        <i class="pi pi-arrow-down"></i>
-    </div>
+    <app-scroll-down-hint></app-scroll-down-hint>
 
     <div class="detail-container">
         <h1>Background</h1>
-        <p>{{ background }}</p>
+        <div class="profile">
+            <p>{{ background }}</p>
+            <img class="profile-img" src="/assets/images/profile.jpg"/>            
+        </div>
     </div>
 
     <div class="detail-container">
@@ -16,6 +16,16 @@
             <p-button class="toc-item" (click)="jump('work-experiences')" label="Work Experiences"></p-button>
             <p-button class="toc-item" (click)="jump('education')" label="Education"></p-button>
             <!-- <p-button class="toc-item" (click)="jump('skills')" label="Skills"></p-button> -->
+        </div>
+        <br/>
+        <h5>Links</h5>
+        <div class="table-of-content">
+            <a href="https://github.com/cherylchen2" target="_blank">
+                <p-button label="Github Profile" icon="pi pi-github"></p-button>
+            </a>
+            <a href="https://www.linkedin.com/in/cherylchen2/" target="_blank">
+                <p-button label="Linkedin Profile" icon="pi pi-linkedin"></p-button>
+            </a>
         </div>
     </div>
 

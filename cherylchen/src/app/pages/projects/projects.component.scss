@@ -1,9 +1,131 @@
 .projects-container{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     text-align: center;
     display: flex;
-    min-height: 100vh;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    .nav-padding {
+        height: 10vh;
+    }
+
+
+    .carousel {
+        display: block;
+        scroll-snap-type: y mandatory;
+        overflow-x: hidden;
+        padding: 2rem;
+        height: 90vh;
+        
+        &-phone-dynamic-display {
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+            display: flex;
+            align-items: center;
+
+            ::ng-deep .p-carousel-content {
+                width: 100vw;
+                max-width: 1300px;
+            }
+        }
+
+        &-pc-dynamic-display {
+            @media (min-width: 768px) {
+                display: none;
+            }
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 1rem;
+            justify-content: space-evenly;
+            gap: 1rem;
+            height: 100%;
+
+            ::ng-deep .project-card {
+                width: 100%;
+                position: relative;
+
+                .active-tag {
+                    position: absolute;
+                    left: 0.5rem;
+                    top: 0.5rem;
+                }
+                
+                &-image {
+                    width: 100%;
+                    border-radius: var(--p-card-border-radius) var(--p-card-border-radius) 0px 0px;
+                }
+
+                .p-card {
+                    height: 100%;
+                    // padding: 10px;
+                    justify-content: flex-end
+                }
+            }
+        }
+
+        &-panel {
+            scroll-snap-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        &-image {
+            max-width: 60%;
+            max-height: 400px;
+        }
+
+        &-content {
+            text-align: left;
+            padding: 2rem;
+
+            &-header {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+
+                h4 {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    ::ng-deep .project-dialog {
+        .p-dialog {
+            max-width: 80vw;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 80%;
+
+            p {
+                margin: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                font-weight: 900;
+                font-size: 1.25rem;
+            }
+        }
+
+        &-content {
+            text-align: left;
+        }
+
+        .card-header-logo {
+            height: 2rem;
+        }
+    }    
 }

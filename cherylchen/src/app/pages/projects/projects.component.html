@@ -1,4 +1,57 @@
 <div class="projects-container">
-    <h3>Woops! Congrats you have found a page that I haven't worked on yet</h3>
-    <p-button class="mt-2" icon="pi pi-heart-fill" label="Go back to home" [routerLink]="['/']"></p-button>
+    <!-- Mobile display -->
+    <p-carousel class="carousel carousel-phone-dynamic-display" [value]="projects" [numScroll]="1" [circular]="true">
+        <ng-template let-project #item>
+            <div class="carousel-panel">
+            <img class="carousel-image" [src]="project.path"/>
+            <div class="carousel-content">
+                <span class="carousel-content-header">
+                    <h4>{{ project.name }}</h4>
+                    <p-tag class="active-tag" *ngIf="project.active" severity="success" value="Active" />
+                </span>
+                <p>{{ project.description }}</p>
+                <a *ngIf="project.link" [href]="project.link" target="_blank">
+                    <p-button label="Learn more"></p-button>
+                </a>
+            </div>
+        </div>
+        </ng-template>
+    </p-carousel>
+
+    <!-- PC display -->
+
+    <div class="carousel carousel-pc-dynamic-display">
+        <p-card 
+            *ngFor="let project of projects; index as projectIndex"
+            class="project-card"
+            (click)="openProjectDialog(projectIndex)"
+        >
+            <ng-template #header>
+                <p-tag class="active-tag" *ngIf="project.active" severity="success" value="Active" />
+                <img class="project-card-image" [src]="project.cardPath"/>
+            </ng-template>
+            <ng-template #subtitle> {{ project.name }} </ng-template>
+        </p-card>
+        
+        <div class="nav-padding"></div>
+    </div>
+
+    <p-dialog
+        [modal]="true"
+        [(visible)]="projectDialogVisible"
+        class="project-dialog"
+    >
+        <ng-template #header>
+            <span class="project-dialog-header">
+                <img class="card-header-logo" [src]="selectedProject.logo"/>
+                <p *ngIf="selectedProject.logoDisplayName">{{ selectedProject.name }}</p>
+            </span>
+        </ng-template>
+        <div class="project-dialog-content">
+            <p>{{ selectedProject.description }}</p>
+            <a *ngIf="selectedProject.link" [href]="selectedProject.link" target="_blank">
+                <p-button label="Learn more"></p-button>
+            </a>
+        </div>
+    </p-dialog>
 </div>
