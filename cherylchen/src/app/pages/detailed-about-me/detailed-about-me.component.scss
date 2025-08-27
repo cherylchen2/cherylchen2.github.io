@@ -42,9 +42,12 @@
     .profile {
         display: flex;
         align-items: center;
+        gap: 20px;
 
         &-img {
-            max-width: 40vw;
+            max-width: 600px;
+            max-height: 50vh;
+            width: 40vw;
             border-radius: 50%;
         }
 
