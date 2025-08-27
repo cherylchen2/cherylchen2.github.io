@@ -1,6 +1,193 @@
-<div class="detailed-about-me-container">
+<section class="detailed-about-me-container" dir="ltr" (scrollsnapchange)="onScroll($event)">
+
+    <div class="scroll-down-hint">
+        More
+        <i class="pi pi-arrow-down"></i>
+    </div>
+
     <div class="detail-container">
         <h1>Background</h1>
         <p>{{ background }}</p>
     </div>
-</div>
+
+    <div class="detail-container">
+        <h5>Tables of content</h5>
+        <div class="table-of-content">
+            <p-button class="toc-item" (click)="jump('work-experiences')" label="Work Experiences"></p-button>
+            <p-button class="toc-item" (click)="jump('education')" label="Education"></p-button>
+            <!-- <p-button class="toc-item" (click)="jump('skills')" label="Skills"></p-button> -->
+        </div>
+    </div>
+
+    <div class="detail-container" id="work-experiences">
+        <h1>Work Experiences</h1>
+        <div>
+            <h3>Verto Health</h3>
+            <span class="title-and-date"><h5>Full-stack Developer I</h5><p>Nov 2023 – Jun 2025</p></span>
+            <span class="title-and-date"><h5>Junior Full-stack Developer</h5><p>Jan 2022 – Apr 2023</p></span>
+        </div>
+
+        <p-accordion [value]="defaultAccordionIndex">
+            <p-accordion-panel value="0">
+                <p-accordion-header>My Experience</p-accordion-header>
+                <p-accordion-content>
+                    <p>
+                        I have completed 8 months of co-op in Verto Health as a Junior Full-stack Developer and 1.5 years as a Full-stack Developer I after receiving a
+                        return offer after graduation. I have decided to take the return offer as not only I have loved my time and the culture at Verto Health, but I
+                        also strongly believed in the mission of improving healthcare through technology. During my time at Verto Health, I have had the opportunity 
+                        to work on a variety of projects that have allowed me to develop my skills in both front-end and back-end development. I have also had the chance
+                        to lead agile projects and collaborate with cross-functional teams which has helped me to grow as a developer and a team player.
+                    </p>
+                    <br />
+                    <p>
+                        Feedbacks from my peers and managers have highlighted my strong problem-solving skills, attention to detail, and communication skills. As a startup,
+                        documentations are often lacking, and I have been able to step up and fill in the gaps by creating clear and concise documentation as well as educating
+                        non-technical stakeholders on technical concepts, giving clear and easy to understand explanations. My patience and willingness to help have made cross-functional
+                        collaborations smoother and more efficient.
+                    </p>
+                </p-accordion-content>
+            </p-accordion-panel>
+
+            <p-accordion-panel value="1">
+                <p-accordion-header>Job Description</p-accordion-header>
+                <p-accordion-content>
+                    <div>
+                        <h4>Full-stack Developer I</h4>
+                        <ul>
+                            <li>Led architecture, planning and implementation using Ruby on Rails and Vue.js for two resource management solutions handling 1,000+ weekly visits, producing flowcharts/UML diagrams, scoping, and delegating tasks</li>
+                            <li>Built reusable WCAG-compliant UI components for an internal library using Angular Storybook, improving accessibility, maintainability and reducing development time by 80% through enabling faster prototyping and reduced code</li>
+                            <li>Designed and implemented a rollback-enabled RBAC ingestion system and mapping script, resolving documentation issue and cutting setup time for devops and product teams by 80%</li>
+                            <li>Engineered a synchronization system to centralize multiple external integrations in Ruby on Rails (e.g., Microsoft Graph, Genesys, Accuro), delivering real-time clinician calendar updates and boosting operational efficiency by 25%</li>
+                            <li>Architectured and tested RESTful APIs using Swagger, supporting critical clinical scheduling operations and ensuring clear documentation which cut integration time by 15%</li>
+                            <li>Engineered a cross-platform reusable registration microfrontend with Angular, Flask, and MongoDB, cutting development time by 8 hours across 2 projects and accelerating patient check-in process</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>Junior Full-stack Developer</h4>
+                        <ul>
+                            <li>Created dynamic report generation tooling using GraphQL non-technical users, reducing engineering request load</li>
+                            <li>Developed a scalable internal web app for documentation & config tracking, supporting long-term growth in client projects</li>
+                            <li>Built <a href="https://github.com/verto-health/astral-accessibility/">Astral Accessibility</a>, an open-source accessibility widget with TTS, color adjustment, and text enhancement features</li>
+                        </ul>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+        </p-accordion>
+    </div>
+
+    <div class="detail-container">
+        <div>
+            <h3>Shanghai Very-Star Internet Science and Technology Co., Ltd.</h3>
+            <span class="title-and-date"><h5>Quality Assurance Co-op</h5><p>Oct 2020 - Jan 2021</p></span>
+        </div>
+
+        <p-accordion [value]="defaultAccordionIndex">
+            <p-accordion-panel value="0">
+                <p-accordion-header>My Experience</p-accordion-header>
+                <p-accordion-content>
+                    <p>
+                        During covid, I have completed a 4-month co-op in Shanghai as a Quality Assurance Intern. I was responsible for fully understanding and creating
+                        test cases for Wechat mini-programs from the users' perspective. I have also ran API tests using Charles Proxy to ensure the data integrity between the
+                        front-end and back-end. This experience have made me more detail-orientated and taught me the importance of understanding the users' needs and perspectives.
+                    </p>
+                </p-accordion-content>
+            </p-accordion-panel>
+
+            <p-accordion-panel value="1">
+                <p-accordion-header>Job Description</p-accordion-header>
+                <p-accordion-content>
+                    <div>
+                        <ul>
+                            <li>Performed alpha testing with 200+ functional test cases to ensure product accuracy and alignment with client requirements</li>
+                        </ul>
+                    </div>
+                </p-accordion-content>
+            </p-accordion-panel>
+        </p-accordion>
+    </div>
+
+
+    <div class="detail-container" id="education">
+        <h1>Education</h1>
+        <p>
+            Going from Hong Kong to Shanghai to Toronto, I have been exposed to the different cultures and have learned far more than
+            what textbooks have taught me. It has built my critical thinking skills as well as adaptiveness to new environments.
+        </p>
+        <div>
+            <span class="title-and-date"><h5>University of Toronto</h5><p>Sept 2018 - June 2023</p></span>
+            <p><b>Honours Bachelor of Science, Computer Science Software Engineer Specialist</b></p>
+            <p>CGPA: 3.51</p>
+            <h6>Extra Curricular</h6>
+            <p-accordion value="-1">
+                <p-accordion-panel value="0">
+                    <p-accordion-header>Capture</p-accordion-header>
+                    <p-accordion-content>
+                        <p>
+                            Photography has always been a great passion for me since primary school. Not only does it capture a frozen moment in time
+                            that could be forever cherished, it also gives me the ability to create a vision that won't be possible in reality, diving
+                            into my own creative world and creating something that doesn't exist.
+                        </p>
+                        <p>
+                            As a first year student new in Toronto, the photography club executives and members have became my best friends, where we
+                            would hang out and take photos on campus. My visions and photo manipulation skills have both been impressive, which have
+                            led me to begin my journey in the club as a Creative Director, determined to bring more people through photography and helping
+                            others who wish to bring their vision into real life.
+                        </p>
+                        <p>
+                            As a Creative Director, I have successfully hosted multiple educational events on portraits and editing as well as consistent
+                            events such as 'Photo Walks', where it would be a time for members or non-members to get to know each other, network while
+                            sharing similar passions, taking photos around school campus.
+                        </p>
+                    </p-accordion-content>
+                </p-accordion-panel>
+
+                <p-accordion-panel value="1">
+                    <p-accordion-header>Intramural Volleyball, D2 & Interhouse</p-accordion-header>
+                    <p-accordion-content>
+                        <p>
+                            I have been an active person since middle school, particular in team sports as I enjoy strategic team work experiences and
+                            the casual competitveness within the sports. However, volleyball is one that I have stuck with for the longest. Although
+                            uncertain, I have signed up for the try-outs in first year and was in the Intramural team for 2018 Fall and 2019 Winter.
+                        </p>
+                        <p>
+                            Volleyball has taught me a lot about taking constructive criticisms as well as working as a team under pressure, ensuring
+                            clear communication and trust for each team mate. The competition is harsh and often times can be discouraging. However, we have
+                            stood strong as a team and have grew closer and cooperating better with each other.
+                        </p>
+                        <p>
+                            After first year, I have decided to focus on school work as my asthma has also worsened due to the climate in Canada. However,
+                            in my senior year of university, I have decided to join interhouse volleyball with my friends as a one last good bye to university
+                            team sports. I have learned to use my past experiences to teach and strategize each interhouse games we have played.
+                        </p>
+                        <p>It is till this day one of my favourite team sports and will continue to play it.</p>
+                    </p-accordion-content>
+                </p-accordion-panel>
+
+                <p-accordion-panel value="2">
+                    <p-accordion-header>UTSC Climbing Club</p-accordion-header>
+                    <p-accordion-content>
+                        <p>
+                            After I have left the intramural volleyball team, I have started indoor climbing as introduced by a friend in Computer Science.
+                            I have fell in love with this sport immediately and have been fully commited into climbing since 2018. The socializing and activeness
+                            aspect of the sport have given me great balance between work, networking, and exercising. The problem solving aspect of this sport
+                            is fun and it has also taught me that there are often times many ways to solve a single problem, and it is never going to be a best
+                            or worst route as it varies from person to person depending on different factors that has to be taken into consideration.
+                        </p>
+                        <p>
+                            Till now I have been consistently climbing, averaging twice a week!
+                        </p>
+                    </p-accordion-content>
+                </p-accordion-panel>
+            </p-accordion>
+        </div>
+
+        <br/>
+
+        <div>
+            <span class="title-and-date"><h5>Shanghai Singapore International School</h5><p>2008 - 2018</p></span>
+            <p><b>International Baccalauerate Bilingual Diploma</b></p>
+            <p>Final: 36/45</p>
+        </div>
+    </div>
+</section>

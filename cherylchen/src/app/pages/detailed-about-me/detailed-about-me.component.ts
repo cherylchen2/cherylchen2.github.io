@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 
+import { AccordionModule } from 'primeng/accordion';
+import { ButtonModule } from 'primeng/button';
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-detailed-about-me',
-  imports: [],
+  imports: [AccordionModule, ButtonModule, RouterModule],
+  standalone: true,
   templateUrl: './detailed-about-me.component.html',
   styleUrl: './detailed-about-me.component.scss'
 })
@@ -18,4 +23,47 @@ export class DetailedAboutMeComponent {
     technology can be used to solve problems and improve people's lives. This passion has driven
     me to pursue a career in technology, where I can use my skills and knowledge to make a positive impact.
   `;
+
+  screenWidth: number;
+  defaultAccordionIndex: number;
+
+  constructor() {
+    this.screenWidth = window.innerWidth;
+    this.defaultAccordionIndex = this.screenWidth > 768 ? 0 : -1;
+  }
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+    this.defaultAccordionIndex = this.screenWidth > 768 ? 0 : -1;
+
+    
+  }
+
+  ngAfterContentInit(): void {
+    document?.getElementById('education')?.scrollIntoView();
+  }
+
+  jump(id: string): void {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  onScroll(event: any): void {
+    const scrollTop = event.target.scrollTop;
+    const scrollHeight = event.target.scrollHeight - event.target.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+    const hintElement = document.querySelector('.scroll-down-hint') as HTMLElement;
+    hintElement.style.opacity = '0';
+
+    if (hintElement) {
+      if (scrollPercentage == 100) {
+        hintElement.style.opacity = '0';
+      } else {
+        hintElement.style.opacity = '1';
+      }
+    }
+  }
 }
