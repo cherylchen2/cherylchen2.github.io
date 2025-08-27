@@ -24,23 +24,14 @@ export class DetailedAboutMeComponent {
     me to pursue a career in technology, where I can use my skills and knowledge to make a positive impact.
   `;
 
-  screenWidth: number;
-  defaultAccordionIndex: number;
+  screenWidth: number = window.innerWidth;
+  defaultAccordionIndex: string = this.screenWidth > 768 ? '0' : '-1';
 
-  constructor() {
-    this.screenWidth = window.innerWidth;
-    this.defaultAccordionIndex = this.screenWidth > 768 ? 0 : -1;
-  }
-
-  ngOnInit(): void {
-    this.screenWidth = window.innerWidth;
-    this.defaultAccordionIndex = this.screenWidth > 768 ? 0 : -1;
-
-    
-  }
-
-  ngAfterContentInit(): void {
-    document?.getElementById('education')?.scrollIntoView();
+  ngAfterViewInit(): void {
+    if(typeof window != 'undefined') {
+      this.screenWidth = window.innerWidth;
+      this.defaultAccordionIndex = this.screenWidth > 768 ? '0' : '-1';
+    }
   }
 
   jump(id: string): void {
@@ -56,10 +47,8 @@ export class DetailedAboutMeComponent {
     const scrollPercentage = (scrollTop / scrollHeight) * 100;
 
     const hintElement = document.querySelector('.scroll-down-hint') as HTMLElement;
-    hintElement.style.opacity = '0';
-
     if (hintElement) {
-      if (scrollPercentage == 100) {
+      if (scrollPercentage > 90) {
         hintElement.style.opacity = '0';
       } else {
         hintElement.style.opacity = '1';

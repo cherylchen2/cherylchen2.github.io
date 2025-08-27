@@ -1,4 +1,4 @@
-<section class="detailed-about-me-container" dir="ltr" (scrollsnapchange)="onScroll($event)">
+<section class="detailed-about-me-container" dir="ltr" (scrollsnapchange)="onScroll($event)" (scroll)="onScroll($event)">
 
     <div class="scroll-down-hint">
         More
@@ -27,7 +27,7 @@
             <span class="title-and-date"><h5>Junior Full-stack Developer</h5><p>Jan 2022 – Apr 2023</p></span>
         </div>
 
-        <p-accordion [value]="defaultAccordionIndex">
+        <p-accordion [(value)]="defaultAccordionIndex">
             <p-accordion-panel value="0">
                 <p-accordion-header>My Experience</p-accordion-header>
                 <p-accordion-content>
@@ -82,7 +82,7 @@
             <span class="title-and-date"><h5>Quality Assurance Co-op</h5><p>Oct 2020 - Jan 2021</p></span>
         </div>
 
-        <p-accordion [value]="defaultAccordionIndex">
+        <p-accordion [(value)]="defaultAccordionIndex">
             <p-accordion-panel value="0">
                 <p-accordion-header>My Experience</p-accordion-header>
                 <p-accordion-content>
