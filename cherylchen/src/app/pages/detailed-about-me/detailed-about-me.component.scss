@@ -1,5 +1,6 @@
 .detailed-about-me-container {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 1.1rem;
     text-align: left;
     overflow-x: hidden;
     flex-flow: column nowrap;
@@ -36,13 +37,39 @@
         .table-of-content{
             display: flex;
             gap: 1rem;
+
+            ::ng-deep {
+                .p-button {
+                    background: linear-gradient(to right, #FFAFBD 0%, #ffc3a0 100%);;
+                    color: black;
+                    border: none;
+                }
+
+                .p-button:hover {
+                    background: #FFAFBD;
+                    border: 2px solid #5b2c34;
+                    color: black;
+                }
+            }
         }
     }
 
     .profile {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 8%;
+
+        h1 {
+            font-weight: bold;
+        }
+
+        &-description p {
+            margin-bottom: 0;
+        }
+
+        b {
+            color: #5b2c34;
+        }
 
         &-img {
             max-width: 600px;

@@ -3,10 +3,12 @@
     <app-scroll-down-hint></app-scroll-down-hint>
 
     <div class="detail-container">
-        <h1>Background</h1>
         <div class="profile">
-            <p>{{ background }}</p>
-            <img class="profile-img" src="/assets/images/profile.jpg"/>            
+            <img class="profile-img" src="/assets/images/profile.jpg"/>
+            <div>
+                <h1>Nice to meet you! 👋</h1>
+                <p class="profile-description" [innerHTML]="background"></p>
+            </div>
         </div>
     </div>
 
@@ -42,18 +44,21 @@
                 <p-accordion-header>My Experience</p-accordion-header>
                 <p-accordion-content>
                     <p>
-                        I have completed 8 months of co-op in Verto Health as a Junior Full-stack Developer and 1.5 years as a Full-stack Developer I after receiving a
-                        return offer after graduation. I have decided to take the return offer as not only I have loved my time and the culture at Verto Health, but I
-                        also strongly believed in the mission of improving healthcare through technology. During my time at Verto Health, I have had the opportunity 
-                        to work on a variety of projects that have allowed me to develop my skills in both front-end and back-end development. I have also had the chance
-                        to lead agile projects and collaborate with cross-functional teams which has helped me to grow as a developer and a team player.
+                        I began my career at Verto Health with an 8-month co-op as a Junior Full-stack Developer and returned
+                         full-time after graduation as a Full-stack Developer I.
+                         I chose to return not only because of the culture but also because I strongly believe in Verto’s mission
+                         of improving healthcare through technology.
                     </p>
-                    <br />
+                    <br/>
                     <p>
-                        Feedbacks from my peers and managers have highlighted my strong problem-solving skills, attention to detail, and communication skills. As a startup,
-                        documentations are often lacking, and I have been able to step up and fill in the gaps by creating clear and concise documentation as well as educating
-                        non-technical stakeholders on technical concepts, giving clear and easy to understand explanations. My patience and willingness to help have made cross-functional
-                        collaborations smoother and more efficient.
+                        During my time at Verto, I’ve built skills across front-end and back-end development, led agile projects, and collaborated with
+                         cross-functional teams. In a fast-paced startup environment, I’ve taken initiative to create clear documentation and translate 
+                         technical concepts for non-technical stakeholders, improving collaboration and efficiency.
+                    </p>
+                    <br/>
+                    <p>
+                        Peers and managers have recognized me for my problem-solving, attention to detail, and communication skills, as well
+                         as my patience and willingness to support others.
                     </p>
                 </p-accordion-content>
             </p-accordion-panel>

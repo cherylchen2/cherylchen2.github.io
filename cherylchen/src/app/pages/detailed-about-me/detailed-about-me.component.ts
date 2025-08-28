@@ -16,15 +16,10 @@ import { ScrollDownHintComponent } from '../../shared/components/scroll-down-hin
 })
 export class DetailedAboutMeComponent {
   background: string = `
-    I was born in Hong Kong and have stayed in Hong Kong for 7 and
-    a half years before moving to Shanghai with my family where I continued my education
-    in Shanghai Singapore International School (SSIS) for 10 years. After graduation, I have
-    moved to Toronto, Canada to pursue my post-secondary education at the University of Toronto
-    where I have graduated with Honours Bachelor of Science as a Computer Science Specialist.
-    Since young, I have always been interested in technology as inspired by my father who
-    is currently working in the technology industry. I have always been fascinated by how
-    technology can be used to solve problems and improve people's lives. This passion has driven
-    me to pursue a career in technology, where I can use my skills and knowledge to make a positive impact.
+    I am a University of Toronto alumini, graduated in 2023 with Bachelor of Science, Computer Science degree.
+    </br></br>
+    I believe  <b>software should empower everyone</b>, and I am passionate about <b>leveraging technology to improve quality of
+    life</b> by contributing and building solutions that make an impact in people's lives.
   `;
 
   screenWidth: number = window.innerWidth;
